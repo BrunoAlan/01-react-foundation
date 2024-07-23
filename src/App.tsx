@@ -2,7 +2,7 @@
 // import { Counter } from "./components/Counter";
 // import { BasicFuntions, BasicTypes, ObjectLiterals } from "./typescript";
 
-import { UsersPage } from "./components";
+import { FormsPage } from "./components";
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
       <Counter />
       <CounterWithHook /> 
       <LoginPage />*/}
-      <UsersPage />
+      {/* <UsersPage /> */}
+      <FormsPage />
     </main>
   );
 }
