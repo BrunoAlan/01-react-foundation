@@ -1,6 +1,9 @@
-import { LoginPage } from "./components";
+// import { LoginPage } from "./components";
 // import { Counter } from "./components/Counter";
 // import { BasicFuntions, BasicTypes, ObjectLiterals } from "./typescript";
+
+import { useEffect } from "react";
+import { UsersPage } from "./components";
 
 function App() {
   return (
@@ -11,8 +14,9 @@ function App() {
       <ObjectLiterals />
       <BasicFuntions />
       <Counter />
-      <CounterWithHook /> */}
-      <LoginPage />
+      <CounterWithHook /> 
+      <LoginPage />*/}
+      <UsersPage />
     </main>
   );
 }
