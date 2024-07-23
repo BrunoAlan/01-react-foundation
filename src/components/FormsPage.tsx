@@ -6,22 +6,35 @@ type FormInputs = {
 };
 
 export const FormsPage = () => {
-  const { register } = useForm<FormInputs>({
+  const { register, handleSubmit, formState, watch } = useForm<FormInputs>({
     defaultValues: {
       email: "alan.brunoab@gmail.com",
       password: "123456",
     },
   });
+
+  const onSubmit = (myForm: FormInputs) => {
+    console.log({ myForm });
+  };
+
+  //just to see email value changing in console
+  console.log(watch("email"));
+
   return (
     <>
-      <form action="">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <h3>Formularios</h3>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <input type="text" placeholder="Email" {...register("email")} />
+          <input
+            type="text"
+            placeholder="Email"
+            {...register("email", { required: true })}
+          />
           <input type="text" placeholder="Password" {...register("password")} />
           <button type="submit">Login</button>
         </div>
       </form>
+      <pre>{JSON.stringify(formState, null, 2)}</pre>
     </>
   );
 };
